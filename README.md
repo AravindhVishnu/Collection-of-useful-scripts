@@ -4,7 +4,7 @@ Collection of useful Powershell scripts for SW development
 Description: 
 
 - ConfigureIPSettings.ps1: 
-Possible to configure IP address on a network controller interface (NIC). 
+Possible to configure IP settings on a network controller interface (NIC). 
 Both IPv4 and IPv6 settings are supported.
 
 Examples:
