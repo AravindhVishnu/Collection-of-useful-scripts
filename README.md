@@ -21,7 +21,7 @@ powershell -ExecutionPolicy Bypass -File ./ConfigureIPSettings.ps1 -Type Static 
 
 powershell -ExecutionPolicy Bypass -File ./ConfigureIPSettings.ps1 -Type DHCP -IPType IPv6
 
-Tools: Powershell 5.1, Excel, Visual Studio Code (with the Powershell extension)
+Tools: Powershell 5.1, Visual Studio Code (with the Powershell extension)
 
 Use this command in the Powershell console: powershell -ExecutionPolicy Bypass -File pathToTheScript
 Debugging the Powershell script can be done in the Visual Studio Code environment.
