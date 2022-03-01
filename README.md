@@ -5,9 +5,9 @@ Description:
 
 - ConfigureIPSettings.ps1: 
 Possible to configure IP settings on a network controller interface (NIC). 
-Both IPv4 and IPv6 settings are supported.
+IPv4 or IPv6 settings are supported.
 
-Instructions: Start Powershell console as administrator.
+Instructions: Start Powershell console as an administrator.
 
 powershell -ExecutionPolicy Bypass -File ./ConfigureIPSettings.ps1 -Type Static -IPType IPv4 -IPv4Address 192.168.1.2 -SubnetMask 255.255.255.0 -IPv4Gateway 192.168.1.1 -IPv4DNS 8.8.8.8','8.8.4.4
 
@@ -26,4 +26,4 @@ Tools: Powershell 5.1, Visual Studio Code (with the Powershell extension)
 Use this command in the Powershell console: powershell -ExecutionPolicy Bypass -File pathToTheScript
 Debugging the Powershell script can be done in the Visual Studio Code environment.
 
-Note: These Powershell scripts has only been tested on Windows 10.
+Note: These Powershell scripts have only been tested on Windows 10.
