@@ -7,7 +7,7 @@ Description:
 Possible to configure IP settings on a network controller interface (NIC). 
 Both IPv4 and IPv6 settings are supported.
 
-Examples:
+Instructions: Start Powershell console as administrator.
 
 powershell -ExecutionPolicy Bypass -File ./ConfigureIPSettings.ps1 -Type Static -IPType IPv4 -IPv4Address 192.168.1.2 -SubnetMask 255.255.255.0 -IPv4Gateway 192.168.1.1 -IPv4DNS 8.8.8.8','8.8.4.4
 
