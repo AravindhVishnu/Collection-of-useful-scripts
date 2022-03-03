@@ -98,13 +98,11 @@ if ($inputsOK -eq "True")
 	if ($IPType -eq "IPv4")
 	{
 		Write-Host "Enable IPv4 on the NIC"
-		Set-NetAdapterBinding -Name $Name -DisplayName *6* -Enabled $False
 		Set-NetAdapterBinding -Name $Name -DisplayName *4* -Enabled $True
 	}
 	else
 	{
 		Write-Host "Enable IPv6 on the NIC"
-		Set-NetAdapterBinding -Name $Name -DisplayName *4* -Enabled $False
 		Set-NetAdapterBinding -Name $Name -DisplayName *6* -Enabled $True		
 	}
 	
