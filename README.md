@@ -37,8 +37,10 @@ powershell -ExecutionPolicy Bypass -File PathToTheScript -Name Ethernet -Type DH
 - PrintDocuments.ps1: Print all Word, PDF and Notepad documents located in the same folder (the default printer is used).
 It is optionally possible to remove all existing print jobs before commencing with the print.
 
+Instructions: Configure the default printer.
+
 Print all documents: 
 powershell -ExecutionPolicy Bypass -File PrintDocuments.ps1 -Path PathToTheDocumentsFolder
 
 Remove all existing print jobs and then print all documents: 
-powershell -ExecutionPolicy Bypass -File PrintDocuments.ps1 -Path PathToTheDocumentsFolder -RemovePrintJobs true -PrinterName "HPDC4550 (HP DeskJet 4100 series)"
+powershell -ExecutionPolicy Bypass -File PrintDocuments.ps1 -Path PathToTheDocumentsFolder -RemovePrintJobs true -PrinterName DefaultPrinterName
