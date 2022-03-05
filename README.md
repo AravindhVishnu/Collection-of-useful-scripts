@@ -35,7 +35,7 @@ DHCP IPv6 configuration:
 powershell -ExecutionPolicy Bypass -File PathToTheScript -Name Ethernet -Type DHCP -IPType IPv6
 
 - PrintDocuments.ps1: Print all Word, PDF and Notepad documents located in the same folder (the default printer is used).
-It is also optionally possible to remove all existing print jobs before commencing with the print.
+It is optionally possible to remove all existing print jobs before commencing with the print.
 
 Print all documents: 
 powershell -ExecutionPolicy Bypass -File PrintDocuments.ps1 -Path PathToTheDocumentsFolder
