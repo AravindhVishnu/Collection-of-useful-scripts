@@ -1,6 +1,14 @@
 # Collection-of-useful-scripts
 Collection of useful Powershell scripts for SW development
 
+Collection:
+ConfigureIPSettings.ps1
+PrintDocuments.ps1
+
+Tools: Powershell 5.1, Visual Studio Code (with the Powershell extension). Debugging the Powershell script can be done in the Visual Studio Code environment.
+
+Note: These Powershell scripts have only been tested on Windows 10.
+
 Description: 
 
 - ConfigureIPSettings.ps1: 
@@ -26,6 +34,11 @@ powershell -ExecutionPolicy Bypass -File PathToTheScript -Name Ethernet -Type St
 DHCP IPv6 configuration: 
 powershell -ExecutionPolicy Bypass -File PathToTheScript -Name Ethernet -Type DHCP -IPType IPv6
 
-Tools: Powershell 5.1, Visual Studio Code (with the Powershell extension). Debugging the Powershell script can be done in the Visual Studio Code environment.
+- PrintDocuments.ps1: Description: Print all Word, PDF and Notepad documents located in the same folder (the default printer is used).
+It is also optionally possible to remove all existing print jobs before commencing with the print.
 
-Note: These Powershell scripts have only been tested on Windows 10.
+Print all documents
+powershell -ExecutionPolicy Bypass -File PrintDocuments.ps1 -Path PathToTheDocumentsFolder
+
+Remove all existing print jobs and then print all documents
+powershell -ExecutionPolicy Bypass -File PrintDocuments.ps1 -Path PathToTheDocumentsFolder -RemovePrintJobs true -PrinterName "HPDC4550 (HP DeskJet 4100 series)"
