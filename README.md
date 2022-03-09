@@ -48,14 +48,14 @@ powershell -ExecutionPolicy Bypass -File PathToTheScript -Path PathToTheDocument
 Remove all existing print jobs and then print all documents: 
 powershell -ExecutionPolicy Bypass -File PrintDocuments.ps1 -Path PathToTheDocumentsFolder -RemovePrintJobs true -PrinterName DefaultPrinterName
 
-- StoreComputerInfo.ps1: Store computer info in a text file which is created in the same folder as this script.
+- StoreComputerInfo.ps1: Store computer info in a text file which is created in the same folder as this script is placed in.
 
 Instructions: Move the Powershell script to a suitable folder.
 
 Create a text file which contains detailed computer information:
 powershell -ExecutionPolicy Bypass -File PathToTheScript
 
-- MergeStaticLibs.ps1: Merge serveral static libraries into one single static library file which is easy for the client program to keep track of and use.
+- MergeStaticLibs.ps1: Merge serveral static libraries into one single static library file which is easy for the client executable to keep track of and use.
 
 Instructions: Make sure all the static libraries are placed in the InputFolderPath (at least two static libraries are needed for the merge to work).
 The following path needs to be added to the PATH environment variable: 
