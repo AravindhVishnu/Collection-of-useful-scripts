@@ -59,9 +59,11 @@ if ($pathsOK -eq "True")
 			# Execute the Microsoft Library Manager
 			# The arguments are the path to the output file, path to the folder where all static 
 			# libraries (to be combined) are located, and the names of these static libraries.
-			# For this command to work, the path to lib.exe:
+			# For this command to work, the path to the folder containing lib.exe:
 			# C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\bin\Hostx64\x64\
-			# needs to be added to the PATH environment variable.
+			# needs to be added to the PATH environment variable. If Visual Studio 2022 Community version is used,
+			# the above path is correct. For another Visual Studio version, find out the path to the folder 
+			# containing lib.exe
 			Write-Host "Run Microsoft Library Manager to merge all the static libraries."
 			&lib.exe $arguments
 		}
