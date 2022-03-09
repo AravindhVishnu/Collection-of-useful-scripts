@@ -1,4 +1,4 @@
-# Description: Configure IP settings on a network interface controller (NIC)
+# Description: Configure IP settings on a network interface controller (NIC).
 
 param(
 	[string]$Name = "Ethernet",
@@ -153,7 +153,7 @@ if ($inputsOK -eq "True")
 			if ($PSBoundParameters.ContainsKey('IPv6Gateway') -eq $True)
 			{
 				# Configure the DefaultGateway only if the caller specifies it
-				Write-Host "Configuring the IPv6 address, subnet mask and default gateway"
+				Write-Host "Configuring the IPv6 address, subnet prefix length and default gateway"
 				New-NetIPAddress -InterfaceAlias $Name -AddressFamily $IPType -IPAddress $IPv6Address -PrefixLength $SubnetPrefixLength -DefaultGateway $Ipv6Gateway | Out-Null
 			}
 			else
