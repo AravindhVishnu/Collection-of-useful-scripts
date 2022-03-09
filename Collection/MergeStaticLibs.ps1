@@ -1,5 +1,5 @@
 # Description: Merge serveral static libraries into one single static library file
-# which is easy for the client program to keep track of and use.
+# which is easy for the client executable to keep track of and use.
 
 param(
 	[string]$InputFolderPath = ".",
