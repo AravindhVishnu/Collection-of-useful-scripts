@@ -1,5 +1,5 @@
 # Description: Store computer information in a text file which will be created 
-# in the same folder as this script.
+# in the same folder as this script is placed in.
 
 # Stop running the script in case there is an error
 $ErrorActionPreference = "Stop"
