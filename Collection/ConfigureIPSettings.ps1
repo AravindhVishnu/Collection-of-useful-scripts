@@ -198,4 +198,6 @@ $StopWatch.Stop()
 $execTimeString = "Script execution time: " + $StopWatch.ElapsedMilliSeconds + " ms"
 Write-Host $execTimeString
 
+$Error.Clear()
+
 Write-Host "------------ Stop Script --------------"
