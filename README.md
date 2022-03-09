@@ -61,8 +61,8 @@ Instructions: Make sure all the static libraries are placed in the InputFolderPa
 The following path needs to be added to the PATH environment variable: 
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\bin\Hostx64\x64\
 
-Above path is correct if Visual Studio 2022 Community version is used. If another version of Visual Studio is used, then find out the path to lib.exe
-(Microsoft Library Manager).
+Above path is correct if Visual Studio 2022 Community version is used. For another version of Visual Studio, find out the path to the folder containing 
+lib.exe (Microsoft Library Manager).
 
 Create the merged static library:
 powershell -ExecutionPolicy Bypass -File PathToTheScript -InputFolderPath PathToFolderContainingAllStaticLibs -OutputFilePath PathToTheMergedStaticLibFile
