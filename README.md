@@ -7,7 +7,8 @@ Collection:
 - StoreComputerInfo.ps1
 - MergeStaticLibs.ps1
 
-Tools: Powershell 5.1, Visual Studio Code (with the Powershell extension). Debugging the Powershell script can be done in the Visual Studio Code environment.
+Tools: Powershell 5.1, Visual Studio 2022, Visual Studio Code (with the Powershell extension). 
+Debugging the Powershell script can be done in the Visual Studio Code environment.
 
 Note: These Powershell scripts have only been tested on Windows 10.
 
