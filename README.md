@@ -42,7 +42,7 @@ It is optionally possible to remove all existing print jobs before commencing wi
 Instructions: Configure the default printer.
 
 Print all documents: 
-powershell -ExecutionPolicy Bypass -File PrintDocuments.ps1 -Path PathToTheDocumentsFolder
+powershell -ExecutionPolicy Bypass -File PathToTheScript -Path PathToTheDocumentsFolder
 
 Remove all existing print jobs and then print all documents: 
 powershell -ExecutionPolicy Bypass -File PrintDocuments.ps1 -Path PathToTheDocumentsFolder -RemovePrintJobs true -PrinterName DefaultPrinterName
