@@ -15,7 +15,7 @@ Note: These Powershell scripts have only been tested on Windows 10.
 Description: 
 
 - ConfigureIPSettings.ps1: 
-Configure IP settings on a network controller interface (NIC). IPv4 or IPv6 settings are supported.
+Configure IP settings on a network interface controller (NIC). IPv4 or IPv6 settings are supported.
 
 Instructions: Start Powershell console as an administrator. Find out the name of the NIC that shall be configured.
 
