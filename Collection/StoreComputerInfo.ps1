@@ -1,5 +1,5 @@
 # Description: Store computer information in a text file which will be created 
-# in the same folder as this script. # For this script to work correctly, 
+# in the same folder as this script. For this script to work correctly, 
 # Powershell needs to be run in admin mode.
 
 # Stop running the script in case there is an error
