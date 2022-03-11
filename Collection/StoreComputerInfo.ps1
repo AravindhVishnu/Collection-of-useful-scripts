@@ -1,5 +1,6 @@
 # Description: Store computer information in a text file which will be created 
-# in the same folder as this script is placed in.
+# in the same folder as this script. # For this script to work correctly, 
+# Powershell needs to be run in admin mode.
 
 # Stop running the script in case there is an error
 $ErrorActionPreference = "Stop"
@@ -38,6 +39,10 @@ Out-File -FilePath $FilePath -Append
 "Computer manufacturer and model" | Out-File -FilePath $FilePath -Append
 Get-CimInstance -ClassName Win32_ComputerSystem | Out-File -FilePath $FilePath -Append
 
+"Drivers" | Out-File -FilePath $FilePath -Append
+Get-WmiObject Win32_PnPSignedDriver| Select-Object DeviceName, Manufacturer, DriverVersion | 
+Out-File -FilePath $FilePath -Append
+
 "Installed Hotfixes" | Out-File -FilePath $FilePath -Append
 Get-CimInstance -ClassName Win32_QuickFixEngineering | Out-File -FilePath $FilePath -Append
 
@@ -54,6 +59,7 @@ Out-File -FilePath $FilePath -Append
 "Available disk space" | Out-File -FilePath $FilePath -Append
 Get-CimInstance -ClassName Win32_LogicalDisk -Filter "DriveType=3" |
 Out-File -FilePath $FilePath -Append
+Get-PSDrive -PSProvider 'FileSystem' | Out-File -FilePath $FilePath -Append
 
 "Logon session" | Out-File -FilePath $FilePath -Append
 Get-CimInstance -ClassName Win32_LogonSession | Out-File -FilePath $FilePath -Append
@@ -70,9 +76,20 @@ Get-CimInstance -ClassName Win32_Service |
 Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap |
 Out-File -FilePath $FilePath -Append
 
-"Network interface controller" | Out-File -FilePath $FilePath -Append
+"Devices" | Out-File -FilePath $FilePath -Append
+Get-PnpDevice -PresentOnly | Out-File -FilePath $FilePath -Append
+
+"Network interface controllers" | Out-File -FilePath $FilePath -Append
 Get-NetIPAddress | Out-File -FilePath $FilePath -Append
 Get-NetIPConfiguration | Out-File -FilePath $FilePath -Append
+
+"VPN connections" | Out-File -FilePath $FilePath -Append
+Get-VpnConnection | Out-File -FilePath $FilePath -Append
+"" | Out-File -FilePath $FilePath -Append
+
+"Installed Apps" | Out-File -FilePath $FilePath -Append
+Get-CimInstance -ClassName Win32_Product | Format-Table -Property Name,Vendor -AutoSize | 
+Out-File -FilePath $FilePath -Append
 
 $StopWatch.Stop()
 $execTimeString = "Script execution time: " + $StopWatch.ElapsedMilliSeconds + " ms"
