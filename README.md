@@ -50,7 +50,7 @@ powershell -ExecutionPolicy Bypass -File PrintDocuments.ps1 -Path PathToTheDocum
 
 - StoreComputerInfo.ps1: Store computer info in a text file which is created in the same folder as this script is placed in.
 
-Instructions: Move the Powershell script to a suitable folder.
+Instructions: Start Powershell console as an administrator. Move the Powershell script to a suitable folder.
 
 Create a text file which contains detailed computer information:
 powershell -ExecutionPolicy Bypass -File PathToTheScript
