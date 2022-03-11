@@ -1,4 +1,5 @@
 # Description: Configure IP settings on a network interface controller (NIC).
+# For this script to work correctly, Powershell needs to be run in admin mode.
 
 param(
 	[string]$Name = "Ethernet",
