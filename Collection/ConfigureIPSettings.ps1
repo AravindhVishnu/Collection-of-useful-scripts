@@ -34,14 +34,14 @@ try
 catch
 {
 	$inputsOK = "False"
-	Write-Error "NIC not found"
+	Write-Error "Error: NIC not found"
 }
 
 # Check Type input parameter
 if (($Type -ne "Static") -and ($Type -ne "DHCP"))
 {
 	$inputsOK = "False"
-	Write-Error "Type not supported"		
+	Write-Error "Error: Type not supported"		
 }
 
 
@@ -49,7 +49,7 @@ if (($Type -ne "Static") -and ($Type -ne "DHCP"))
 if (($IPType -ne "IPv4") -and ($IPType -ne "IPv6"))
 {
 	$inputsOK = "False"
-	Write-Error "IPType not supported"		
+	Write-Error "Error: IPType not supported"		
 }
 
 if ($IPType -eq "IPv4")
@@ -90,7 +90,7 @@ if ($IPType -eq "IPv4")
 		"255.255.255.252" {$CIDR = 30; Break}
 		"255.255.255.254" {$CIDR = 31; Break}
 		"255.255.255.255" {$CIDR = 32; Break}
-		default {$inputsOK = "False"; Write-Error "SubnetMask not supported"; Break}
+		default {$inputsOK = "False"; Write-Error "Error: SubnetMask not supported"; Break}
 	}
 }
 
