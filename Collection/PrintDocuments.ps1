@@ -47,7 +47,7 @@ else  # Print all documents
 		Push-Location
 	
 		$docs = @()
-		$docs = Get-ChildItem -Path . -Include *.txt,*.doc,*docx,*pdf -Recurse -Name
+		$docs = Get-ChildItem -Path . -Include *.txt,*.TXT,*pdf,*.PDF,*.doc,*.DOC,*docx,*.DOCX -Recurse -Name
 		if ($docs.Count -eq 0)
 		{
 			Write-Host "No documents were found. No documents were sent to the printer."
