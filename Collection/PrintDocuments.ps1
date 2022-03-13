@@ -24,7 +24,7 @@ if ($RemovePrintJobs -eq "true")
 	# Check if PrinterName was input by the caller
 	if ($PSBoundParameters.ContainsKey('PrinterName') -eq $False)
 	{
-		Write-Host "Default printer name is required for removing existing print jobs"
+		Write-Host "Error: Default printer name (script input parameter) is required for removing existing print jobs"
 	}
 	else
 	{
@@ -38,7 +38,7 @@ if ($RemovePrintJobs -eq "true")
 # Check path
 if ((Test-Path -Path $Path) -eq $False) 
 {
-	Write-Host "The path does not exist. No documents were sent to the printer."
+	Write-Host "Error: The path does not exist. No documents were sent to the printer."
 }
 else  # Print all documents
 {
@@ -50,7 +50,7 @@ else  # Print all documents
 		$docs = Get-ChildItem -Path . -Include *.txt,*.TXT,*pdf,*.PDF,*.doc,*.DOC,*docx,*.DOCX -Recurse -Name
 		if ($docs.Count -eq 0)
 		{
-			Write-Host "No documents were found. No documents were sent to the printer."
+			Write-Host "Error: No documents were found. No documents were sent to the printer."
 		}
 		else
 		{
