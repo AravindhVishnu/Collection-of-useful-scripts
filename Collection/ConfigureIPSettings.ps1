@@ -44,7 +44,6 @@ if (($Type -ne "Static") -and ($Type -ne "DHCP"))
 	Write-Error "Error: Type not supported"		
 }
 
-
 # Check IPType input parameter
 if (($IPType -ne "IPv4") -and ($IPType -ne "IPv6"))
 {
@@ -170,9 +169,6 @@ if ($inputsOK -eq "True")
 				Set-DnsClientServerAddress -InterfaceAlias $Name -ServerAddresses $IPv6DNS
 			}
 		}
-
-		Write-Host "Restarting NIC"
-		Restart-NetAdapter -InterfaceAlias $Name
 	}
 	else  # DHCP
 	{
@@ -184,10 +180,10 @@ if ($inputsOK -eq "True")
 
 		Write-Host "Enabling automatic DNS"
 		Set-DnsClientServerAddress -InterfaceAlias $Name -ResetServerAddresses
-	
-		Write-Host "Restarting NIC"
-		Restart-NetAdapter -InterfaceAlias $Name
 	}
+	
+	Write-Host "Restarting NIC"
+	Restart-NetAdapter -InterfaceAlias $Name
 	Write-Host "IP settings configured"
 }
 else
