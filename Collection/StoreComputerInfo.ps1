@@ -29,12 +29,15 @@ Get-WmiObject -ClassName Win32_Baseboard | Out-File -FilePath $FilePath -Append
 
 "Physical memory" | Out-File -FilePath $FilePath -Append
 Get-WmiObject Win32_Physicalmemory | 
-Select-Object Manufacturer,Banklabel,Configuredclockspeed,Devicelocator,Capacity,Serialnumber | 
+Select-Object Manufacturer,Banklabel,Configuredclockspeed,Devicelocator,Capacity,Serialnumber,Speed,ConfiguredVoltage,PartNumber |
+Out-File -FilePath $FilePath -Append
+Get-WmiObject CIM_PhysicalMemory | Select-Object -ExpandProperty Capacity | Measure-Object -Sum |
 Out-File -FilePath $FilePath -Append
 
 "Processor" | Out-File -FilePath $FilePath -Append
-Get-CimInstance -ClassName Win32_Processor | Select-Object -ExcludeProperty "CIM*" | 
-Out-File -FilePath $FilePath -Append
+Get-CimInstance -ClassName Win32_Processor | Out-File -FilePath $FilePath -Append
+Get-CimInstance -ClassName Win32_Processor | Select-Object DeviceID, ProcessorType, NumberOfCores,
+ThreadCount, L2CacheSize, VirtualizationFirmwareEnabled | Out-File -FilePath $FilePath -Append
 
 "Computer manufacturer and model" | Out-File -FilePath $FilePath -Append
 Get-CimInstance -ClassName Win32_ComputerSystem | Out-File -FilePath $FilePath -Append
@@ -83,9 +86,8 @@ Get-PnpDevice -PresentOnly | Out-File -FilePath $FilePath -Append
 Get-NetIPAddress | Out-File -FilePath $FilePath -Append
 Get-NetIPConfiguration | Out-File -FilePath $FilePath -Append
 
-"VPN connections" | Out-File -FilePath $FilePath -Append
-Get-VpnConnection | Out-File -FilePath $FilePath -Append
-"" | Out-File -FilePath $FilePath -Append
+"WinSystemLocale (code pages setting)" | Out-File -FilePath $FilePath -Append
+Get-WinSystemLocale | Out-File -FilePath $FilePath -Append
 
 "Installed Apps" | Out-File -FilePath $FilePath -Append
 Get-CimInstance -ClassName Win32_Product | Format-Table -Property Name,Vendor -AutoSize | 
