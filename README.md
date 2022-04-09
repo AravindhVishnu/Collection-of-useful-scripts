@@ -11,7 +11,7 @@ Collection:
 Tools: Powershell 5.1, Powershell 7.22, Visual Studio 2022, Visual Studio Code (with the Powershell extension). 
 Debugging the Powershell script can be done in the Visual Studio Code environment.
 
-Note: These Powershell scripts have only been tested on Windows 10 (except for the MergeStaticLibsLinux.ps1 script which has been tested on Linux Mint).
+Note: These Powershell scripts have been tested with version 5.1 on Windows 10 (except for the MergeStaticLibsLinux.ps1 script which has been tested with version 7.22 on Linux Mint).
 
 Description: 
 
