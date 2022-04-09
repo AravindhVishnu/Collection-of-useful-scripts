@@ -6,11 +6,12 @@ Collection:
 - PrintDocuments.ps1
 - StoreComputerInfo.ps1
 - MergeStaticLibs.ps1
+- MergeStaticLibsLinux.ps1
 
-Tools: Powershell 5.1, Visual Studio 2022, Visual Studio Code (with the Powershell extension). 
+Tools: Powershell 5.1, Powershell 7.22, Visual Studio 2022, Visual Studio Code (with the Powershell extension). 
 Debugging the Powershell script can be done in the Visual Studio Code environment.
 
-Note: These Powershell scripts have only been tested on Windows 10.
+Note: These Powershell scripts have only been tested on Windows 10 (except for the MergeStaticLibsLinux.ps1 script which has been tested on Linux Mint).
 
 Description: 
 
@@ -66,3 +67,11 @@ lib.exe (Microsoft Library Manager).
 
 Create the merged static library:
 powershell -ExecutionPolicy Bypass -File PathToTheScript -InputFolderPath PathToFolderContainingAllStaticLibs -OutputFilePath PathToTheMergedStaticLibFile
+
+- MergeStaticLibsLinux.ps1: Merge serveral static libraries into one single static library file which is easy for the client executable to keep track of and use. This is the Linux version.
+
+Instructions: Make sure all the static libraries are placed in the InputFolderPath (at least two static libraries are needed for the merge to work).
+Run the following command in the bash terminal.
+
+Create the merged static library:
+pwsh PathToTheScript -InputFolderPath PathToFolderContainingAllStaticLibs -OutputFilePath PathToTheMergedStaticLibFile
