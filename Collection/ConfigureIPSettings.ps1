@@ -108,13 +108,22 @@ if ($inputsOK -eq "True")
 	
 	try
 	{
-		Write-Host "Remove any existing IP and gateway from the NIC"
+		Write-Host "Remove any existing IP address from the NIC"
 		Remove-NetIpAddress -InterfaceAlias $Name -AddressFamily $IPType -Confirm:$false
+	}
+	catch
+	{
+		Write-Host "No existing IP address on the NIC to be removed"
+	}
+	
+	try
+	{
+		Write-Host "Remove any existing gateway from the NIC"
 		Remove-NetRoute -InterfaceAlias $Name -AddressFamily $IPType -Confirm:$false
 	}
 	catch
 	{
-		Write-Host "No existing IP and gateway on the NIC to be removed"
+		Write-Host "No existing gateway on the NIC to be removed"
 	}
 
 	if ($Type -eq "Static") 
