@@ -5,8 +5,6 @@ Collection:
 - ConfigureIPSettings.ps1
 - PrintDocuments.ps1
 - StoreComputerInfo.ps1
-- MergeStaticLibs.ps1
-- MergeStaticLibsLinux.ps1
 
 Tools: Powershell 5.1, Powershell 7.22, Visual Studio 2022, Visual Studio Code (with the Powershell extension). 
 Debugging the Powershell script can be done in the Visual Studio Code environment.
